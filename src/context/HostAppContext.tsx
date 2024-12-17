@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 interface UserProfile {
   dguardId: any;
@@ -24,7 +24,17 @@ const HostAppContext = createContext<HostAppContextValue | undefined>(
 export const HostAppProvider: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  const [userProfile, setUserProfile] = useState<UserProfile>({});
+  const [userProfile, setUserProfile] = useState<UserProfile>({
+    dguardId: null,
+    fullName: null,
+    firstName: null,
+    username: null,
+    email: null,
+    preferContactEmail: null,
+    avatar: null,
+    identityProviders: null,
+    dguardMsisdn: null,
+  });
   const value = {
     userProfile,
     setUserProfile,
@@ -38,7 +48,7 @@ export const HostAppProvider: React.FC<{
 export const useHostApp = () => {
   const context = useContext(HostAppContext);
   if (!context) {
-    throw new Error('useHostApp must be used within HostAppProvider');
+    throw new Error("useHostApp must be used within HostAppProvider");
   }
   return context;
 };

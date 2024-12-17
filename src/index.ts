@@ -13,7 +13,7 @@ export * from './api/user';
 /** Icons */
 export * from './icons';
 // how to export BillPaymentHistory path?
-export { default as BillPaymentHistoryEmpty } from './assets/graphic/BillPaymentHistoryEmpty.gif';
+// export { default as BillPaymentHistoryEmpty } from './assets/graphic/BillPaymentHistoryEmpty.gif';
 
 /** Components */
 export * from './components';

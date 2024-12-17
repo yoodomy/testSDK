@@ -1,5 +1,5 @@
 import Svg, { Path } from 'react-native-svg';
-import { ISvgProps } from '../../utils/ISvgProps';
+import { ISvgProps } from '../utils/ISvgProps';
 export function Plane({
   width = 24,
   height = 24,

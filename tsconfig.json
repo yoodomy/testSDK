@@ -1,11 +1,30 @@
 {
-  "extends": "../../tsconfig.base.json",
   "references": [
     {
-      "path": "../dev-tools"
+       "path": "./node_modules/dev-tools"
     }
   ],
   "compilerOptions": {
-    "jsx": "react" 
-  }
+    "jsx": "react-jsx", // Changed from "react"
+    "jsxImportSource": "react",  
+    "types": ["react"],
+    "rootDir": ".",
+    "sourceMap": false,
+    "declaration": false,
+    "inlineSourceMap": false,  // Disable inline source maps
+    "declarationMap": false,   // Disable .d.ts.map files
+    // "outDir": "./dist",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+  },
+  "exclude": ["node_modules", "tmp"],
 }

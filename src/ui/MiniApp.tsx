@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Avatar,
   Box,
@@ -10,12 +10,12 @@ import {
   StatusBar,
   Text,
   VStack,
-} from 'native-base';
-import { Platform, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Arrowleft } from '../icons';
-import Footer from '../components/Footer';
+} from "native-base";
+import { Platform, ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Arrowleft } from "../icons";
+import Footer from "../components/Footer";
 
 const MiniApp = ({
   name,
@@ -36,7 +36,7 @@ const MiniApp = ({
     if (isAuthorized) {
       navigation.navigate(link.navigateTo);
     } else {
-      navigation.navigate('Authorisation', {
+      navigation.navigate("Authorisation", {
         name,
         displayName,
         navigateTo: link.navigateTo,
@@ -46,11 +46,11 @@ const MiniApp = ({
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{ flex: 1, height: '100%', backgroundColor: '#CCE0F8' }}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={{ flex: 1, height: "100%", backgroundColor: "#CCE0F8" }}
     >
       <StatusBar
-        backgroundColor={'#CCE0F8'}
+        backgroundColor={"#CCE0F8"}
         barStyle="dark-content"
         animated={true}
       />
@@ -59,8 +59,8 @@ const MiniApp = ({
           source={banner}
           alt={displayName}
           style={{
-            width: '100%',
-            resizeMode: 'contain',
+            width: "100%",
+            resizeMode: "contain",
           }}
         />
         <Pressable
@@ -72,13 +72,13 @@ const MiniApp = ({
           width="40px"
           height="40px"
           style={{
-            position: 'absolute',
+            position: "absolute",
             top: inset.top + 10,
             left: 16,
             zIndex: 100,
           }}
         >
-          <Arrowleft width="28px" color={'#000000'} />
+          <Arrowleft width="28px" color={"#000000"} />
         </Pressable>
       </>
       <Box
@@ -99,7 +99,7 @@ const MiniApp = ({
             paddingVertical: 24,
             paddingHorizontal: 16,
           }}
-          keyboardShouldPersistTaps={'always'}
+          keyboardShouldPersistTaps={"always"}
         >
           {/* Quick Links */}
           <Box>
@@ -138,22 +138,22 @@ const MiniApp = ({
                 rounded="12px"
                 mt="4"
                 style={{
-                  shadowColor: '#101828',
+                  shadowColor: "#101828",
                   shadowOffset: { width: 0, height: 2 },
                   shadowOpacity: 0.25,
                   shadowRadius: 2,
                   elevation: 2,
-                  backgroundColor: '#F9FAFB',
+                  backgroundColor: "#F9FAFB",
                 }}
               >
                 <Image
                   source={product.image}
                   alt={product.title}
                   style={{
-                    width: '100%',
+                    width: "100%",
                     height: undefined,
                     aspectRatio: 16 / 9,
-                    resizeMode: 'cover',
+                    resizeMode: "cover",
                   }}
                 />
                 <Box pt="4" pl="3" pr="3" pb="5">
@@ -167,20 +167,20 @@ const MiniApp = ({
                     <VStack>
                       {product.showFrom && <Text color="gray.500">From</Text>}
                       <HStack alignItems="flex-end" mb="3px">
-                        <Text variant="h3" style={{ lineHeight: '1' }}>
+                        <Text variant="h3" style={{ lineHeight: 1 }}>
                           {product.price}
                         </Text>
                         <Text>/{product.periodity}</Text>
                       </HStack>
                     </VStack>
                     <Button
-                      onPress={() => navigation.navigate('ProductDetail')}
+                      onPress={() => navigation.navigate("ProductDetail")}
                       height="34px"
                       py={2}
                       px={3.5}
                       _text={{
-                        fontSize: '14px',
-                        lineHeight: '14px',
+                        fontSize: "14px",
+                        lineHeight: "14px",
                       }}
                     >
                       {product.buttonText}

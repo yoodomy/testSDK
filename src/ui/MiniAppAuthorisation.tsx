@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 import {
   Box,
   Text,
@@ -8,42 +8,40 @@ import {
   Pressable,
   VStack,
   Checkbox,
-} from 'native-base';
-import {
-  BottomSheetModal,
-  FlatList,
-  Skeleton,
-} from '@cd-next-gen-app/components';
-import { InfoCircle } from '@cd-next-gen-app/icons';
-import { useTranslation } from 'react-i18next';
+} from "native-base";
+import { useTranslation } from "react-i18next";
 import {
   CheckCircle,
   ChevronDown,
   ChevronUp,
   SwitchHorizontal,
-} from '../icons';
-import { Animated, Easing, LayoutChangeEvent } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { CollapsibleSection } from '../components';
+} from "../icons";
+import { Animated, Easing, LayoutChangeEvent, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { CollapsibleSection } from "../components";
 
 const defaultInformations = [
   {
-    title: 'Full Name',
-    description: 'As per your NRIC',
+    title: "Full Name",
+    description: "As per your NRIC",
   },
   {
-    title: 'NRIC Number',
-    description: 'Your NRIC number',
+    title: "NRIC Number",
+    description: "Your NRIC number",
   },
   {
-    title: 'Phone Number',
-    description: 'Your phone number',
+    title: "Phone Number",
+    description: "Your phone number",
   },
   {
-    title: 'Email',
-    description: 'Your email address',
+    title: "Email",
+    description: "Your email address",
   },
 ];
+
+const Skeleton = ({ headerTitle, isFooter, buttonOption, children }) => {
+  return <View>{children}</View>;
+};
 
 function MiniAppAuthorisation({
   appName,
@@ -62,10 +60,10 @@ function MiniAppAuthorisation({
   return (
     <Box flex={1} bg="white">
       <Skeleton
-        headerTitle={'Authorisation'}
+        headerTitle={"Authorisation"}
         isFooter={true}
         buttonOption={{
-          buttonTitle: 'Agree',
+          buttonTitle: "Agree",
           buttonDisabled: !isAgreed,
           onPressButton: () => onPress(),
         }}
@@ -74,7 +72,7 @@ function MiniAppAuthorisation({
           <Box mx={4} flex={1}>
             <HStack alignItems="center" justifyContent="center" py={8}>
               <Image
-                source={require('../assets/appIcon.png')}
+                source={require("../assets/appIcon.png")}
                 style={{ width: 80, height: 80 }}
                 alt="Celcomdigi"
                 rounded="16px"
@@ -114,8 +112,8 @@ function MiniAppAuthorisation({
                 >
                   <CheckCircle color="#0064DC" width={24} />
                   <VStack pl={2} style={{ flex: 1 }}>
-                    <Text variant="body1">{info.title || '-'}</Text>
-                    <Text color="gray.500">{info.description || '-'}</Text>
+                    <Text variant="body1">{info.title || "-"}</Text>
+                    <Text color="gray.500">{info.description || "-"}</Text>
                   </VStack>
                 </HStack>
               ))}
@@ -139,7 +137,7 @@ function MiniAppAuthorisation({
                     consent to the sharing of your Personal Data above with the
                     Partner subject to the following
                   </Text>
-                  <Text fontWeight="500" color={'primary.600'}>
+                  <Text fontWeight="500" color={"primary.600"}>
                     T&C
                   </Text>
                   <Text>.</Text>

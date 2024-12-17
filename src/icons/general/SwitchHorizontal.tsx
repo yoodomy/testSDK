@@ -9,11 +9,10 @@ export function SwitchHorizontal({
 }: Readonly<ISvgProps>) {
   return (
     <Svg
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
       <Path
         d="M20 17H4M4 17L8 13M4 17L8 21M4 7H20M20 7L16 3M20 7L16 11"
