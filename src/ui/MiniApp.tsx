@@ -12,7 +12,6 @@ import {
   VStack,
 } from "native-base";
 import { Platform, ScrollView } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Arrowleft } from "../icons";
 import Footer from "../components/Footer";
@@ -28,11 +27,10 @@ const MiniApp = ({
   quickLinks,
   productsTitle,
   products,
-  isAuthorized,
+  onGoBack,
   onPressQuickLink,
   onPressProductBanner
 }) => {
-  const navigation = useNavigation<any>();
   const inset = useSafeAreaInsets();
 
   return (
@@ -55,7 +53,7 @@ const MiniApp = ({
           }}
         />
         <Pressable
-          onPress={() => navigation.goBack()}
+          onPress={onGoBack}
           bg="white"
           pt="2"
           pl="1.5"
