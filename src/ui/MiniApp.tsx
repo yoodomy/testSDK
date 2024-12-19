@@ -29,21 +29,11 @@ const MiniApp = ({
   productsTitle,
   products,
   isAuthorized,
+  onPressQuickLink,
+  onPressProductBanner
 }) => {
   const navigation = useNavigation<any>();
   const inset = useSafeAreaInsets();
-
-  const onPressQuickLink = (link) => {
-    if (isAuthorized) {
-      navigation.navigate(link.navigateTo);
-    } else {
-      navigation.navigate("Authorisation", {
-        name,
-        displayName,
-        navigateTo: link.navigateTo,
-      });
-    }
-  };
 
   return (
     <KeyboardAvoidingView
@@ -175,7 +165,7 @@ const MiniApp = ({
                       </HStack>
                     </VStack>
                     <Button
-                      onPress={() => navigation.navigate("ProductDetail")}
+                      onPress={() => onPressProductBanner(product)}
                       height="34px"
                       py={2}
                       px={3.5}
