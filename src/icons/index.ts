@@ -11,5 +11,8 @@ export * from './general/ChevronDown';
 export * from './general/ChevronLeft';
 export * from './general/ChevronRight';
 export * from './general/ChevronUp';
+export * from './general/Close';
+export * from './general/Edit03';
 export * from './general/Plane';
+export * from './general/Search';
 export * from './general/SwitchHorizontal';
