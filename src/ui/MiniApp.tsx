@@ -16,6 +16,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Arrowleft } from "../icons";
 import Footer from "../components/Footer";
+import { withNativeBase } from "src/utils/withNativeBase";
 
 const MiniApp = ({
   name,
@@ -203,4 +204,4 @@ const MiniApp = ({
   );
 };
 
-export default MiniApp;
+export default withNativeBase(MiniApp);

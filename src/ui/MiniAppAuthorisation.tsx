@@ -19,6 +19,7 @@ import {
 import { Animated, Easing, LayoutChangeEvent, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { CollapsibleSection } from "../components";
+import { withNativeBase } from "src/utils/withNativeBase";
 
 const defaultInformations = [
   {
@@ -151,4 +152,4 @@ function MiniAppAuthorisation({
   );
 }
 
-export default MiniAppAuthorisation;
+export default withNativeBase(MiniAppAuthorisation);
